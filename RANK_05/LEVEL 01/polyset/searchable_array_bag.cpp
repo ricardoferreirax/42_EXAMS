@@ -1,0 +1,48 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   searchable_array_bag.cpp                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rmedeiro <rmedeiro@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/18 00:34:38 by fvizcaya          #+#    #+#             */
+/*   Updated: 2026/06/27 15:30:09 by rmedeiro         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "searchable_array_bag.hpp"
+
+searchable_array_bag::searchable_array_bag() : array_bag()
+{
+	
+}
+
+searchable_array_bag::searchable_array_bag(const searchable_array_bag& other) : array_bag(other)
+{
+	
+}
+
+searchable_array_bag::~searchable_array_bag()
+{
+
+}
+
+searchable_array_bag& searchable_array_bag::operator=(const searchable_array_bag& other)
+{
+	if (this != &other)
+		array_bag::operator=(other);
+	return (*this);
+}
+
+bool searchable_array_bag::has(int value) const
+{
+	int i = 0;
+	while (i < size)
+	{
+		if (data[i] == value)
+			return (true);
+		i++;
+	}
+	return (false);
+}
+
